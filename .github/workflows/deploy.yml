@@ -45,11 +45,12 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER || 'ftp.sacliendustri.com' }}
+          username: ${{ secrets.FTP_USERNAME || 'github@sacliendustri.com' }}
           password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}
+          server-dir: ./
           exclude: |
             **/.git*
             **/.git*/**
