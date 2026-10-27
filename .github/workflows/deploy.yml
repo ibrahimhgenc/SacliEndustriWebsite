@@ -29,6 +29,14 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
+      - name: Create .env from ENV_FILE secret
+        env:
+          ENV_FILE_CONTENT: ${{ secrets.ENV_FILE }}
+        run: |
+          if [ -n "$ENV_FILE_CONTENT" ]; then
+            echo "$ENV_FILE_CONTENT" > .env
+          fi
+
       - name: Build production bundle
         env:
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
