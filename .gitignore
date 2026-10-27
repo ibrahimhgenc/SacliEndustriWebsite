@@ -16,8 +16,9 @@ dist-ssr
 !.env.example
 *.zip
 
-# Large promotional videos (>100MB GitHub file limit - already hosted on cPanel)
+# Large promotional videos & catalogs (already hosted on cPanel)
 public/tanitim_video*.mp4
+public/Katalog*.pdf
 
 # Editor directories and files
 .vscode/*

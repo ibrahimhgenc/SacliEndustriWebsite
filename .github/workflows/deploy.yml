@@ -55,6 +55,7 @@ jobs:
             **/.git*/**
             **/node_modules/**
             tanitim_video*.mp4
+            Katalog*.pdf
             .well-known/**
             cgi-bin/**
             uploads/**
