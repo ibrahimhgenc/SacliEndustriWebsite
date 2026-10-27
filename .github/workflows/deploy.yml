@@ -69,3 +69,6 @@ jobs:
             cgi-bin/**
             uploads/**
             upload.php
+            usb/**
+            proje8.png
+            proje2(old).png
